@@ -1,7 +1,6 @@
 var generateBtn = document.querySelector("#generate");
 
-KeyboardEvent()
-
+//KeyboardEvent()
 
 
 function startTimer(){
