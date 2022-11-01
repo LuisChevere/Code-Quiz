@@ -1,4 +1,4 @@
-var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#beginbutton");
 
 //KeyboardEvent()
 
