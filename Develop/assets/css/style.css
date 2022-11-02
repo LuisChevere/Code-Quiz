@@ -1,5 +1,8 @@
 *{
   background-color: black;
+  margin: 0;
+  padding: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 html,
@@ -14,6 +17,9 @@ body,
 body {
   font-family: sans-serif;
   background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .wrapper {
@@ -56,17 +62,38 @@ header {
   text-align: center;
 }
 
+.timer {
+  font-size: large;
+  font-weight: bold;
+}
+
+.high-scores {
+  font-size: large;
+  font-weight: bold;
+}
+
+#total-score{
+  color: #c0c7cf;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .card-footer {
   text-align: center;
 }
 
 
 
-.card-footer::after {
+/* .card-footer::after {
   content: " ";
   display: block;
   clear: both;
-}
+} */
 
 .btn {
   border: none;
@@ -83,6 +110,20 @@ header {
   cursor: pointer;
 }
 
+.btn:hover{
+  color: black;
+  padding: 15;
+}
+
+.options {
+  padding: 10px;
+  order: 4;
+}
+
+.hide{
+  display: none;
+}
+
 button[disabled] {
   cursor: default;
   background: #c0c7cf;
@@ -91,8 +132,14 @@ button[disabled] {
 .float-right {
   float: right;
 }
+.alternative {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+};
 
-@media (max-width: 690px) {
+/* @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
     margin: 16px 0px 0px 0px;
@@ -108,4 +155,4 @@ button[disabled] {
   .btn {
     font-size: 0.8rem;
   }
-}
+} */
