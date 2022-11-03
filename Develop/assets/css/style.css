@@ -2,15 +2,17 @@
   background-color: black;
   margin: 0;
   padding: 0;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 html,
 body,
 .wrapper {
   height: 100%;
+  background-color: black;
+  text-align: center;
   margin: 0;
   padding: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 
@@ -110,34 +112,14 @@ header {
   cursor: pointer;
 }
 
-.btn:hover{
-  color: black;
-  padding: 15;
-}
-
 .options {
   padding: 10px;
   order: 4;
 }
 
-.hide{
-  display: none;
-}
-
-button[disabled] {
-  cursor: default;
-  background: #c0c7cf;
-}
-
 .float-right {
   float: right;
 }
-.alternative {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-};
 
 /* @media (max-width: 690px) {
   .btn {

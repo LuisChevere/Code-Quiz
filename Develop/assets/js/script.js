@@ -5,6 +5,7 @@ var time = document.getElementById('time');
 var savedScore = JSON.parse(localStorage.getItem('userDate'));
 var score = 0;
 var scores = 50;
+var allScored = [];
 var questions = [
 
   {
@@ -42,12 +43,15 @@ var questions = [
   }
 ];
 
-generateBtn.addEventListener("click",beginQuiz);
+generateBtn.addEventListener("click", beginQuiz);
 
 function beginQuiz() {
-  if(savedScore !==null){
-
+  if (savedScore !== null) {
+    allScored = savedScore;
   }
+  
+  questions.classList.remove('none')
+
 }
 
 function showResults() { }
