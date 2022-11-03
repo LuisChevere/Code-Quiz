@@ -1,63 +1,53 @@
-var qContainer = document.getElementById('quiz');
+var quizContainer = document.getElementById('quiz');
 var resultContainer = document.getElementById('results');
 var generateBtn = document.querySelector("#beginbutton");
-
+var time = document.getElementById('time');
+var savedScore = JSON.parse(localStorage.getItem('userDate'));
+var score = 0;
+var scores = 50;
 var questions = [
 
   {
     question: "What is Javascript?",
-    choices: {
-      1:'A scripting language', 
-      2:'A language inside HTML', 
-      3:'A language in the CCS', 
-      4:'None of the above'}
+    choices: [
+      'A scripting language',
+      'A language inside HTML',
+      'A language in the CCS',
+      'None of the above']
   },
   {
     answer: 'A scripting language'
   },
   {
     question: 'What is HTML?',
-    choices: {
-      1:'Longest provider of internet hosting', 
-      2:'A standard system for tagging text files', 
-      3:'The way to hide actions', 
-      4:'A programming language'}
-  },
-  {
+    choices: [
+      'Longest provider of internet hosting',
+      'A standard system for tagging text files',
+      'The way to hide actions',
+      'A programming language'],
+
     answer: 'A standard system for tagging text files'
   },
   {
     question: "Which in an External CSS?",
-    choices: {
-      1: '<style>',
-      2: '<head>',
-      3: '<link>',
-      4: 'None of the above'
-    }
+    choices: [
+      '<style>',
+      '<head>',
+      '<link>',
+      'None of the above',
+    ]
   },
   {
-    answer: '3'
+    answer: '<link>'
   }
 ];
 
+generateBtn.addEventListener("click",beginQuiz);
 
-function quiz() {
-  var output = [];
+function beginQuiz() {
+  if(savedScore !==null){
 
-  questions.forEach(
-    (questions, 0) => {
-    var answer = [a];
-
-    for(0.answer) { 
-
-      answer.push()
-    }
   }
-  )
-
-
-
-
 }
 
 function showResults() { }
