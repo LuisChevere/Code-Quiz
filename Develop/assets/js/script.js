@@ -117,7 +117,17 @@ function displaynxtquestion(e){
 
     }else{
       finishgame()
-      
+
     }
+}
+function correction(answr){
+  if(answr){
+    alert.innerText= "Right"
+  }else {
+    alert.innerText= "Wrong"
+    count = count -10
+    timer.innerHTML = count
+  }
+
 }
 
