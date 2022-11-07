@@ -87,5 +87,11 @@ function highscores(a, b){
     inits: a,
     userinfo: b
   };
+  allScored.push(userinfo);
+
+  localStorage.setItem("userInfo", JSON.stringify(allScored));
+  location.href = "highscore.html";
 }
+
+
 
