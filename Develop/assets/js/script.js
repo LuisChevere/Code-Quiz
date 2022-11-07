@@ -4,13 +4,16 @@ var generateBtn = document.querySelector("#beginbutton");
 var time = document.getElementById('time');
 var timer =document.getElementById('timer');
 var savedScore = JSON.parse(localStorage.getItem('userinfo'));
+var titleitem = document.getElementById('title-item')
 var nxtQuestion 
 var information = document.getElementById('info');
 var alert = document.getElementById('alert');
 var btnScore = document.getElementById('btnscore');
 var myScore = document.getElementById('myscore');
+var addScore = document.getElementById('addscore');
 var score = 0;
 var scores = 50;
+var currentindex = 0;
 var allScored = [];
 var questions = [
 
@@ -128,6 +131,19 @@ function correction(answr){
     count = count -10
     timer.innerHTML = count
   }
+
+  setTimeout(function(){
+    alert.innerText=""
+  }, 1000);
+
+}
+
+function finishgame(){
+  myScore,innerText = count
+  addscore.classList.remove('none')
+  timer.classList.remove('none')
+  questions.classList.remove('none')
+  addscore.classList.remove('none')
 
 }
 
