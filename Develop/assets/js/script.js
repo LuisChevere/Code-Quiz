@@ -1,6 +1,6 @@
 var quizContainer = document.getElementById('quiz');
 var resultContainer = document.getElementById('results');
-var generateBtn = document.querySelector("#beginbutton");
+var beginBtn = document.querySelector("#beginbutton");
 var time = document.getElementById('time');
 var timer = document.getElementById('timer');
 var savedScore = JSON.parse(localStorage.getItem('userinfo'));
@@ -53,21 +53,20 @@ var questions = [
   }
 ];
 
-generateBtn.addEventListener("click", beginQuiz);
-
+beginBtn.addEventListener("click", beginQuiz);
 function beginQuiz() {
-  if (savedScore !==null) {
-    allScored = savedScore;
-  }
-  information.classList.add()
-  generateBtn.classList.add()
-  timer.classList.remove()
-  questions.classList.remove()
-  nxtQuestion = questions[currentindex]
+  // if (savedScore !==null) {
+  //   allScored = savedScore;
+  // }
+  // information.classList.add('d-none')
+  // beginBtn.classList.add('d-none')
+  // timer.classList.remove('d-none')
+  // questions.classList.remove('d-none')
+  // nxtQuestion = questions[currentindex]
 
-  displaynxtquestion(nxtQuestion)
+  // displaynxtquestion(nxtQuestion)
 
-  startTimer()
+  // startTimer()
 
 }
 
@@ -152,7 +151,7 @@ function finishgame() {
 
 var highscoresList = document.querySelector('#highscoresList');
 var backButton = document.querySelector('#backButton');
-var clearButton = document.querySelector('clear')
+var clearButton = document.querySelector('#clear')
 
 function showScores() {
   if (savedScore !== null) {
@@ -163,17 +162,13 @@ function showScores() {
       var scores = savedScore[i].userinfo
       var enteredScore = document.createElement('li');
       enteredScore.innerHTML = initials + '-' + scores;
-      scoreList.appendChild(enderedScore);
+      scoreList.appendChild(enteredScore);
     }
-    highscoresList.appendChild(enderedScore);
+    highscoresList.appendChild(scoreList);
   }
 };
 
 showScores();
-
-backButton.addEventListener('click', function () {
-  location.href = '';
-});
 
 clearButton.addEventListener('click', function () {
   highscoresList.innerHTML = '';
