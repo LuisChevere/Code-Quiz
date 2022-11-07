@@ -53,7 +53,6 @@ var questions = [
 ];
 
 generateBtn.addEventListener("click", beginQuiz);
-
 function beginQuiz() {
   if (savedScore !== null) {
     allScored = savedScore;
@@ -71,7 +70,7 @@ function beginQuiz() {
 }
 
 btnScore.addEventListener('click', function(){
-    var name =document.getElementById('myscore').value
+    var name = document.getElementById('myscore').value
     highscores(name, count)
 });
 
@@ -100,7 +99,7 @@ function showQuestion(question){
   titleitem.innerText=question.title
   question.choices.foreach(Element => {
     var btn = document.createElement('btn')
-    btn.className = "btn-prmry -btn-block text left"
+    btn.className = "btn-prmry"
     btn.innerText = Element.answer.appendchild(btn)
     btn.addEventListener('click', nxtQuestion)
   });
@@ -169,6 +168,7 @@ function showScores(){
 };
 
 showScores();
+
 backButton.addEventListener('click', function() {
   location.href = "index.html";
 });
@@ -176,4 +176,4 @@ backButton.addEventListener('click', function() {
 clearButton.addEventListener('click', function(){
   highscoresList.innerHTML = '';
   window.localStorage.clear();
-}):
+});
