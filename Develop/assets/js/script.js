@@ -93,5 +93,31 @@ function highscores(a, b){
   location.href = "highscore.html";
 }
 
+function showQuestion(question){
+  titleitem.innerText=question.title
+  question.choices.foreach(Element => {
+    var btn = document.createElement('btn')
+    btn.className = "btn-prmry -btn-block text left"
+    btn.innerText = Element.answer.appendchild(btn)
+    btn.addEventListener('click', nxtQuestion)
+  });
+}
 
+function displaynxtquestion(e){
+  currentindex++
+    if(currentindex < questions.length){
+      correction(e.target.innerText == nxtQuestion.answer)
+      answer.innerHTML=""
+      if(currentindex < questions.length){
+        nxtQuestion= questions[currentindex]
+      }else {
+        currentindex = 0
+        displaynxtquestion(nxtQuestion)
+      }
+
+    }else{
+      finishgame()
+      
+    }
+}
 
