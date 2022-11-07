@@ -61,9 +61,8 @@ header {
 }
 
 .score-container{
-  display: flex;
+  display: block;
   flex-direction: row;
-  background-color: black;
   justify-content: center;
   text-align: center;
   color: white;
