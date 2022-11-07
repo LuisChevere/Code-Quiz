@@ -2,15 +2,16 @@ var quizContainer = document.getElementById('quiz');
 var resultContainer = document.getElementById('results');
 var generateBtn = document.querySelector("#beginbutton");
 var time = document.getElementById('time');
-var timer =document.getElementById('timer');
+var timer = document.getElementById('timer');
 var savedScore = JSON.parse(localStorage.getItem('userinfo'));
 var titleitem = document.getElementById('title-item')
-var nxtQuestion 
+var nxtQuestion
 var information = document.getElementById('info');
 var alert = document.getElementById('alert');
 var btnScore = document.getElementById('btnScore');
 var myScore = document.getElementById('myscore');
 var addScore = document.getElementById('addscore');
+var questionAnswer = document.getElementById('Q-a');
 var score = 0;
 var scores = 50;
 var currentindex = 0;
@@ -53,38 +54,39 @@ var questions = [
 ];
 
 generateBtn.addEventListener("click", beginQuiz);
+
 function beginQuiz() {
-  if (savedScore !== null) {
+  if (savedScore !==null) {
     allScored = savedScore;
   }
-  info.classList.add('none')
-  generateBtn.classList('none');
-  timer.classList.remove('none')
-  questions.classList.remove('none')
+  information.classList.add()
+  generateBtn.classList.add()
+  timer.classList.remove()
+  questions.classList.remove()
   nxtQuestion = questions[currentindex]
 
-      displayquestion(nxtQuestion)
+  displaynxtquestion(nxtQuestion)
 
-    startTimer()
+  startTimer()
 
 }
 
-btnScore.addEventListener('click', function(){
-    var name = document.getElementById('myscore').value
-    highscores(name, count)
+btnScore.addEventListener('click', function() {
+  var names = document.getElementById('scoreInput').value
+  highscores(names, count)
 });
 
 function startTimer() {
 
   var timeInterval = setInterval(function () {
-    timer.innerText = count 
+    timer.innerText = count
     count--;
 
 
   }, 1000);
 }
 
-function highscores(a, b){
+function highscores(a, b) {
   var userinfo = {
     inits: a,
     userinfo: b
@@ -95,54 +97,54 @@ function highscores(a, b){
   location.href = "highscore.html";
 }
 
-function showQuestion(question){
-  titleitem.innerText=question.title
+function showQuestion(question) {
+  titleitem.innerText = question.title
   question.choices.foreach(Element => {
     var btn = document.createElement('btn')
     btn.className = "btn-prmry"
-    btn.innerText = Element.answer.appendchild(btn)
+    btn.innerText = Element.questionAnswer.appendchild(btn)
     btn.addEventListener('click', nxtQuestion)
   });
 }
 
-function displaynxtquestion(e){
+function displaynxtquestion(e) {
   currentindex++
-    if(currentindex < questions.length){
-      correction(e.target.innerText == nxtQuestion.answer)
-      answer.innerHTML=""
-      if(currentindex < questions.length){
-        nxtQuestion= questions[currentindex]
-      }else {
-        currentindex = 0
-        displaynxtquestion(nxtQuestion)
-      }
-
-    }else{
-      finishgame()
-
+  if (currentindex < questions.length) {
+    correction(e.target.innerText == nxtQuestion.answer)
+    questionAnswer.innerHTML = ""
+    if (currentindex < questions.length) {
+      nxtQuestion = questions[currentindex]
+    } else {
+      currentindex = 0
+      displaynxtquestion(nxtQuestion)
     }
+
+  } else {
+    finishgame()
+
+  }
 }
-function correction(answr){
-  if(answr){
-    alert.innerText= "Right"
-  }else {
-    alert.innerText= "Wrong"
-    count = count -10
+function correction(answr) {
+  if (answr) {
+    alert.innerText = "Right"
+  } else {
+    alert.innerText = "Wrong"
+    count = count - 10
     timer.innerHTML = count
   }
 
-  setTimeout(function(){
-    alert.innerText=""
+  setTimeout(function () {
+    alert.innerText = ""
   }, 1000);
 
 }
 
-function finishgame(){
-  myScore,innerText = count
-  addscore.classList.remove('none')
+function finishgame() {
+  myScore, innerText = count
+  addScore.classList.remove('none')
   timer.classList.remove('none')
   questions.classList.remove('none')
-  addscore.classList.remove('none')
+  addScore.classList.remove('none')
 
 }
 
@@ -152,11 +154,11 @@ var highscoresList = document.querySelector('#highscoresList');
 var backButton = document.querySelector('#backButton');
 var clearButton = document.querySelector('clear')
 
-function showScores(){
-  if (savedScore!== null) {
+function showScores() {
+  if (savedScore !== null) {
     var scoreList = document.createElement('sl');
     scoreList.className = "scorelistClass";
-    for( var i = 0; i < savedScore.length; i++) {
+    for (var i = 0; i < savedScore.length; i++) {
       var initials = savedScore[i].inits;
       var scores = savedScore[i].userinfo
       var enteredScore = document.createElement('li');
@@ -169,11 +171,11 @@ function showScores(){
 
 showScores();
 
-backButton.addEventListener('click', function() {
-  location.href = "index.html";
+backButton.addEventListener('click', function () {
+  location.href = '';
 });
 
-clearButton.addEventListener('click', function(){
+clearButton.addEventListener('click', function () {
   highscoresList.innerHTML = '';
   window.localStorage.clear();
 });
