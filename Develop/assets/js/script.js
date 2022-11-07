@@ -147,3 +147,9 @@ function finishgame(){
 
 }
 
+//High Scores Section
+
+var highscoresList = document.querySelector('#highscoresList');
+var backButton = document.querySelector('#backButton');
+var clearButton = document.querySelector('clear')
+
