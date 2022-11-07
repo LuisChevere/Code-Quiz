@@ -22,30 +22,27 @@
                     </div>
 
                     <div class="container-2">
-                        <div class="timer">Timer: <span id="time">80</span>
+                        <div class="timer">Timer: <span id="time">90</span>
                         </div>
                     </div>
             </header>
 
             <div class="quiz none" id="quiz">
                 <p>Try to answer and get the highest score in this Code Quiz that will test your knowlegde! <br>
-                    Select begin whenever ready!
+                    Select begin when ready!
                 </p>
-                <div class="card-body">
-                    <button id="beginbutton" class="btn">Begin Quiz</button>
-                </div>
+                <button class="btn btn-prmry" id="beginbutton">Begin Quiz!</button>
             </div>
-            <div class="content" id="question-area">
-                <div id="question-text"></div>
-                <div class="options">
-                    <button id="beginbutton" class="btn">1.</button>
-                    <button id="beginbutton" class="btn">2.</button>
-                    <button id="beginbutton" class="btn">3.</button>
-                    <button id="beginbutton" class="btn">4.</button>
-                </div>
-            </div>
+        </div>
 
-            <script src="./assets/js/script.js"></script>
+        <div id="addscore"></div>
+        <h2 class="d-block"><span id="score"></span></h2>
+        <input type="text" class="form-contrl" placeholder="Add Initials:" id="addScore">
+        <div class="input-group-append">
+            <button class="input-group-text btn btn-primry" id="btnScore">Add!</button>
+        </div>
+
+        <script src="./assets/js/script.js"></script>
     </body>
 
 </html>
