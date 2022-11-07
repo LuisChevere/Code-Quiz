@@ -5,6 +5,8 @@ var time = document.getElementById('time');
 var timer =document.getElementById('timer');
 var savedScore = JSON.parse(localStorage.getItem('userinfo'));
 var nxtQuestion 
+var information = document.getElementById('info');
+var alert = document.getElementById('alert');
 var btnScore = document.getElementById('btnscore');
 var myScore = document.getElementById('myscore');
 var score = 0;
@@ -53,8 +55,11 @@ function beginQuiz() {
   if (savedScore !== null) {
     allScored = savedScore;
   }
-  
+  info.classList.add('none')
+  generateBtn.classList('none');
+  timer.classList.remove('none')
   questions.classList.remove('none')
+  nxtQuestion = questions[currentindex]
 
       displayquestion(nxtQuestion)
 
@@ -64,12 +69,9 @@ function beginQuiz() {
 
 btnScore.addEventListener('click', function(){
     var name =document.getElementById('myscore').value
-
+    highscores(name, count)
 });
 
-function showResults() { }
-
-quiz()
 
 generateBtn.addEventListener("click", showResults);
 
@@ -78,6 +80,7 @@ function startTimer() {
   var timeInterval = setInterval(function () {
     timer.innerText = count 
     count--;
+
 
   }, 1000);
 }
