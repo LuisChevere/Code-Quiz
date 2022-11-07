@@ -59,6 +59,16 @@ header {
     text-align: right;
     color: white;
 }
+
+.score-container{
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
 .card-body {
   min-height: 100px;
   text-align: center;
