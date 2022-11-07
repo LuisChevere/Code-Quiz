@@ -72,9 +72,6 @@ btnScore.addEventListener('click', function(){
     highscores(name, count)
 });
 
-
-generateBtn.addEventListener("click", showResults);
-
 function startTimer() {
 
   var timeInterval = setInterval(function () {
@@ -83,5 +80,12 @@ function startTimer() {
 
 
   }, 1000);
+}
+
+function highscores(a, b){
+  var userinfo = {
+    inits: a,
+    userinfo: b
+  };
 }
 
