@@ -8,7 +8,7 @@ var titleitem = document.getElementById('title-item')
 var nxtQuestion 
 var information = document.getElementById('info');
 var alert = document.getElementById('alert');
-var btnScore = document.getElementById('btnscore');
+var btnScore = document.getElementById('btnScore');
 var myScore = document.getElementById('myscore');
 var addScore = document.getElementById('addscore');
 var score = 0;
