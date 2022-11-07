@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,8 +16,12 @@
             <h1 id="scoresSection">High Scores</h1>
             <div id="higscoreslist"></div>
 
-            <button class="btn btn-prmry" id="backButtom">Go back!</button>
-            <button class="btn btn-prmry" id="clear">Clear scores!</button>
+            <button class="btn btn-prmry" input type="button" id="Go back!" onClick="history.go(-1);">Go back!</button>
+            </div>
+            
+            <input type="text" value="" id="clear">
+            <button class="btn btn-prmry" onclick="clear">Clear scores!</button>
+            
         </div>
      </div>
 </body>
