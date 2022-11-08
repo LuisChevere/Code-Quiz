@@ -5,13 +5,15 @@ var time = document.getElementById('time');
 var timer = document.getElementById('timer');
 var savedScore = JSON.parse(localStorage.getItem('userinfo'));
 var titleitem = document.getElementById('title-item')
-var nxtQuestion
+var questionName = document.getElementById('questionName')
+var nxtQuestion;
 var information = document.getElementById('info');
 var alert = document.getElementById('alert');
 var btnScore = document.getElementById('btnScore');
 var myScore = document.getElementById('myscore');
 var addScore = document.getElementById('addscore');
 var questionAnswer = document.getElementById('Q-a');
+var count = 90;
 var score = 0;
 var scores = 50;
 var currentindex = 0;
@@ -55,18 +57,20 @@ var questions = [
 
 beginBtn.addEventListener("click", beginQuiz);
 function beginQuiz() {
-  // if (savedScore !==null) {
-  //   allScored = savedScore;
-  // }
-  // information.classList.add('d-none')
-  // beginBtn.classList.add('d-none')
-  // timer.classList.remove('d-none')
-  // questions.classList.remove('d-none')
-  // nxtQuestion = questions[currentindex]
+  if (savedScore !==null) {
+    allScored = savedScore;
+  }
+  
+  information.classList.add('d-none')
+  beginBtn.classList.add('d-none')
+  timer.classList.remove('d-none')
+  quizContainer.classList.remove('d-none')
+  var question = questions[currentindex]
+  console.log('current questions: ')
+  console.log(question);
+  showQuestion(question)
 
-  // displaynxtquestion(nxtQuestion)
-
-  // startTimer()
+  startTimer()
 
 }
 
@@ -97,31 +101,33 @@ function highscores(a, b) {
 }
 
 function showQuestion(question) {
-  titleitem.innerText = question.title
-  question.choices.foreach(Element => {
-    var btn = document.createElement('btn')
-    btn.className = "btn-prmry"
-    btn.innerText = Element.questionAnswer.appendchild(btn)
-    btn.addEventListener('click', nxtQuestion)
+  questionName.innerText = question.question;
+  question.choices.forEach(choice => {
+    var btn = document.createElement('button');
+    btn.className = "btn";
+    btn.innerText = choice;
+    questionAnswer.appendChild(btn);
+    btn.addEventListener('click', displaynxtquestion)
   });
 }
 
 function displaynxtquestion(e) {
+  console.log('inside displaynxtquestion');
+  console.log('event innerText is: ');
+  console.log(e.target.innerText);
+  correction(e.target.innerText == questions[currentindex].answer);
   currentindex++
   if (currentindex < questions.length) {
-    correction(e.target.innerText == nxtQuestion.answer)
-    questionAnswer.innerHTML = ""
-    if (currentindex < questions.length) {
-      nxtQuestion = questions[currentindex]
-    } else {
+    showQuestion(questions[currentindex]);
+  } else {
       currentindex = 0
       displaynxtquestion(nxtQuestion)
     }
 
-  } else {
-    finishgame()
+  // } else {
+  //   finishgame()
 
-  }
+  // }
 }
 function correction(answr) {
   if (answr) {
@@ -149,28 +155,28 @@ function finishgame() {
 
 //High Scores Section
 
-var highscoresList = document.querySelector('#highscoresList');
-var backButton = document.querySelector('#backButton');
-var clearButton = document.querySelector('#clear')
+// var highscoresList = document.querySelector('#highscoresList');
+// var backButton = document.querySelector('#backButton');
+// var clearButton = document.querySelector('#clear')
 
-function showScores() {
-  if (savedScore !== null) {
-    var scoreList = document.createElement('sl');
-    scoreList.className = "scorelistClass";
-    for (var i = 0; i < savedScore.length; i++) {
-      var initials = savedScore[i].inits;
-      var scores = savedScore[i].userinfo
-      var enteredScore = document.createElement('li');
-      enteredScore.innerHTML = initials + '-' + scores;
-      scoreList.appendChild(enteredScore);
-    }
-    highscoresList.appendChild(scoreList);
-  }
-};
+// function showScores() {
+//   if (savedScore !== null) {
+//     var scoreList = document.createElement('sl');
+//     scoreList.className = "scorelistClass";
+//     for (var i = 0; i < savedScore.length; i++) {
+//       var initials = savedScore[i].inits;
+//       var scores = savedScore[i].userinfo
+//       var enteredScore = document.createElement('li');
+//       enteredScore.innerHTML = initials + '-' + scores;
+//       scoreList.appendChild(enteredScore);
+//     }
+//     highscoresList.appendChild(scoreList);
+//   }
+// };
 
-showScores();
+// showScores();
 
-clearButton.addEventListener('click', function () {
-  highscoresList.innerHTML = '';
-  window.localStorage.clear();
-});
+// clearButton.addEventListener('click', function () {
+//   highscoresList.innerHTML = '';
+//   window.localStorage.clear();
+// });
