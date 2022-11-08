@@ -1,5 +1,5 @@
 //High Scores Section
-
+var savedScore = JSON.parse(localStorage.getItem('userinfo'));
 var highscoresList = document.querySelector('#highscoresList');
 var backButton = document.querySelector('#backButton');
 var clearButton = document.querySelector('#clear')
