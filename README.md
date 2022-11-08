@@ -8,4 +8,4 @@ When Begin Quiz is clicked, the quiz will start, first question will pop up and 
 
 [Deployed Link Here](https://luischevere.github.io/Code-Quiz/)
 
-[!site image])
+[!site image](https://github.com/LuisChevere/Code-Quiz/blob/main/Develop/assets/codequizsnapshot.png?raw=true)
