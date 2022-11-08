@@ -22,30 +22,37 @@
                     </div>
 
                     <div class="container-2">
-                        <div class="timer d-none">Timer: <span id="time">90</span>
+                        <div id="timer" class="d-none">Timer: <span id="time">90</span>
                         </div>
                     </div>
             </header>
 
-            <div class="quiz d-none" id="quiz">
-                <div class="answer" id="Q-a">
-                </div>
-            <div class="beginbutton">
+
+
+            <div id="info">
                 <p>Try to answer and get the highest score in this Code Quiz that will test your knowlegde! <br>
                     Select begin when ready!
                 </p>
-                <button class="btn btn-prmry" id="beginbutton">Begin Quiz!</button>
+                <button class="starter-btn" id="beginbutton">Begin Quiz!</button>
             </div>
-        </div>
 
-        <div class="score-container d-none" id="addScore"></div>
-        <h3 class="d-block"><span id="score"></span></h3>
-            <input type="text" placeholder="Add Initials:" id="enteredScore">
-            <div class="input-group-append">
-            <button class="btn btn-prmry" id="btnScore">Add!</button>
-        </div>
+            <div class="d-none" id="quiz">
+                <h3 id="questionName"></h3>
+                <div class="answer" id="Q-a">
+                </div>
+            </div>
+            <p class="d-none" id="alert"></p>
 
-        <script src="./assets/js/script.js"></script>
+            <div class="score-container d-none" id="addScore">
+                <h3 class="d-block"><span id="score"></span></h3>
+                <input type="text" placeholder="Add Initials:" id="enteredScore">
+                <div class="input-group-append">
+                    <button class="btn" id="btnScore">Add!</button>
+                </div>
+            </div>
+
+
+            <script src="./assets/js/script.js"></script>
     </body>
 
 </html>
