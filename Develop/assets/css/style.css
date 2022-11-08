@@ -112,6 +112,20 @@ header {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
   color: hsl(0, 0%, 100%);
+  display: block;
+  font-size: 22px;
+  line-height: 22px;
+  margin: 16px 16px 16px 20px;
+  padding: 14px 34px;
+  text-align: center;
+  cursor: pointer;
+}
+.starter-btn {
+  border: none;
+  background-color: grey;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+    0px;
+  color: hsl(0, 0%, 100%);
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
@@ -121,6 +135,7 @@ header {
   cursor: pointer;
 }
 
+
 .options {
   padding: 10px;
   order: 4;
@@ -129,6 +144,11 @@ header {
 .float-right {
   float: right;
 }
+
+.d-none {
+  display: none;
+}
+
 
 /* @media (max-width: 690px) {
   .btn {
