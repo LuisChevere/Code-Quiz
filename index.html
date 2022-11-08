@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="container-2">
-                        <div id="timer">Timer: <span id="time">90</span>
+                        <div id="timer">Timer:90 <span id="time"></span>
                         </div>
                     </div>
             </header>
@@ -30,21 +30,22 @@
 
 
             <div id="info">
-                <p>Try to answer and get the highest score in this Code Quiz that will test your knowlegde! <br>
+                <p id="info">Try to answer and get the highest score in this Code Quiz that will test your knowlegde!
+                    <br>
                     Select begin when ready!
                 </p>
                 <button class="starter-btn" id="beginbutton">Begin Quiz!</button>
             </div>
 
             <div class="d-none" id="quiz">
-                <h3 id="questionName"></h3>
+                <h3 class="info" id="questionName"></h3>
                 <div class="answer" id="Q-a">
                 </div>
             </div>
-            <p class="d-none" id="alert"></p>
+                <h2 id="alert"></h2>
 
             <div class="score-container d-none" id="addScore">
-                <h3 class="d-none"><span id="score"></span></h3>
+                <h4 class="d-none"><span id="score"></span></h4>
                 <input type="text" placeholder="Add Initials:" id="enteredScore">
                 <div class="input-group-append">
                     <button class="btn" id="btnScore">Add!</button>
