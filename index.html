@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Code-Quiz</title>
+</head>
+
+<body>
+
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1>Code Quiz Challenge</h1>
+
+                <div class="container">
+                    <div class="score">
+                        <a href="./highscore.html">Highscores</a>
+                    </div>
+
+                    <div class="container-2">
+                        <div id="timer">Timer: <span id="time">90</span>
+                        </div>
+                    </div>
+            </header>
+
+
+
+            <div id="info">
+                <p>Try to answer and get the highest score in this Code Quiz that will test your knowlegde! <br>
+                    Select begin when ready!
+                </p>
+                <button class="starter-btn" id="beginbutton">Begin Quiz!</button>
+            </div>
+
+            <div class="d-none" id="quiz">
+                <h3 id="questionName"></h3>
+                <div class="answer" id="Q-a">
+                </div>
+            </div>
+            <p class="d-none" id="alert"></p>
+
+            <div class="score-container d-none" id="addScore">
+                <h3 class="d-none"><span id="score"></span></h3>
+                <input type="text" placeholder="Add Initials:" id="enteredScore">
+                <div class="input-group-append">
+                    <button class="btn" id="btnScore">Add!</button>
+                </div>
+            </div>
+
+
+            <script src="./assets/js/script.js"></script>
+    </body>
+
+</html>
