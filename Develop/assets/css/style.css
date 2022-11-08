@@ -83,6 +83,11 @@ header {
   font-weight: bold;
 }
 
+.answer-container {
+  display: flex;
+  flex-direction: column;
+}
+
 #total-score{
   color: #c0c7cf;
 }
