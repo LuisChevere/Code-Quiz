@@ -57,10 +57,10 @@ var questions = [
 
 beginBtn.addEventListener("click", beginQuiz);
 function beginQuiz() {
-  if (savedScore !==null) {
+  if (savedScore !== null) {
     allScored = savedScore;
   }
-  
+
   information.classList.add('d-none')
   beginBtn.classList.add('d-none')
   timer.classList.remove('d-none')
@@ -74,7 +74,7 @@ function beginQuiz() {
 
 }
 
-btnScore.addEventListener('click', function() {
+btnScore.addEventListener('click', function () {
   var names = document.getElementById('scoreInput').value
   highscores(names, count)
 });
@@ -112,23 +112,22 @@ function showQuestion(question) {
 }
 
 function displaynxtquestion(e) {
-  console.log('inside displaynxtquestion');
-  console.log('event innerText is: ');
-  console.log(e.target.innerText);
+  // console.log('inside displaynxtquestion');
+  // console.log('event innerText is: ');
+  // console.log(e.target.innerText);
   correction(e.target.innerText == questions[currentindex].answer);
   currentindex++
   if (currentindex < questions.length) {
     showQuestion(questions[currentindex]);
   } else {
-      currentindex = 0
-      displaynxtquestion(nxtQuestion)
-    }
+    currentindex = 0
+    displaynxtquestion(nxtQuestion)
+  }
 
-  // } else {
-  //   finishgame()
 
-  // }
+  finishgame()
 }
+
 function correction(answr) {
   if (answr) {
     alert.innerText = "Right"
